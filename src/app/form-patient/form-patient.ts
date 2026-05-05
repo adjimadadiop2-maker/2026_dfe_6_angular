@@ -4,6 +4,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PatientService } from '../patient-service';
+import { ActivatedRoute as ActivateRouter } from '@angular/router';
 @Component({
   selector: 'app-form-patient',
   imports: [CommonModule, ReactiveFormsModule],
@@ -11,6 +12,9 @@ import { PatientService } from '../patient-service';
   styleUrl: './form-patient.css',
 })
 export class FormPatient {
+  isedit = false;
+  idpatient: number = 0;
+  private activatedRoute = inject(ActivateRouter);
   formPatient=new FormGroup({
     prenom : new FormControl(''),
     nom : new FormControl(''),
