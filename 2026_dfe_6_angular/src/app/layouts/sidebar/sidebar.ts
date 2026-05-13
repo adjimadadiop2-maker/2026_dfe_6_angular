@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Patient } from '../patient/patient';
-import { Content } from '../content/content';
+import { Patient } from '../../administrateur/patient/patient';
+import { Content } from '../../content/content';
 
 @Component({
   selector: 'app-sidebar',

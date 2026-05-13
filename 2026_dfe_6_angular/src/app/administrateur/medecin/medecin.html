@@ -2,7 +2,7 @@
   <div class="card-header">
     <div class="row">
       <div class="col-5"></div>
-      @if(title == 'Patients'){
+      @if(title == 'Medecins'){
         <h5>{{title}}</h5>
       }
      
@@ -11,7 +11,7 @@
       </div>
       <div class="col-4">
         
-        <button class="btn btn-primary" (click)="getInfoPatient()">Ajouter un patient</button>   
+        <button class="btn btn-primary" (click)="getInfoMedecin()">Ajouter un médecin</button>   
       </div>
       
     </div>
@@ -24,21 +24,33 @@
             <th scope="col">Nom</th>
              <th scope="col">Prenom</th>
             <th scope="col">Email</th>
-            <th scope="col">Âge</th>
+            <th scope="col">Téléphone</th>
+            <th scope="col">Fonction</th>
             <th scope="col">Actions</th>
+            
             
           </tr>
         </thead>
         <tbody>
-          @for(item of tableauPatients2 ; track $index){
+          @for(item of tableauMedecins ; track $index){
             <tr>
               <th scope="col">{{$index+1}}</th>
               <td>{{item.prenom}}</td>
               <td>{{item.nom}}</td>
               <td>{{item.mail}}</td>
-              <td>{{item.age}}</td>
+              <td>{{item.telephone}}</td>
+              <td>{{item.fonction}}</td>
               <td>
-                <button class="btn btn-primary" (click)="getInfoPatient()" >Editer</button>
+                <button type="button"
+                      class="btn btn-primary"
+                      (click)="editMedecin(item)">
+                Editer
+              </button>
+              <button type="button"
+                    class="btn btn-danger"
+                    (click)="deleteMedecin(item.id)">
+                 Supprimer
+              </button>
                 
               </td>
             </tr>

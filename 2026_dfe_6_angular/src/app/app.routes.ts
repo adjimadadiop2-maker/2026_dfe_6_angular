@@ -1,12 +1,32 @@
-import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
-import { Patient } from './patient/patient';
-import { FormPatient } from './form-patient/form-patient';
+import { Acceuil } from './acceuil/acceuil';
+import { Publiclayout } from './layouts/publiclayout/publiclayout';
+import { Auth } from './public/auth/auth';
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'patient', pathMatch:'full'},
-    {path: 'patient', component: Patient},
-    {path: 'direction', component: FormPatient},
-    { path: 'formpatient/:id', component: FormPatient }
+
+  { path: '', redirectTo: 'patient', pathMatch: 'full' },
+
+  {
+    path:'public',
+    loadChildren:() =>
+      import('./public/public.routes')
+      .then(m => m.PublicRoutes)
+  },
+
+  {
+    path: 'administration',
+    loadChildren:() =>
+      import('./administrateur/administrateur.routes')
+      .then(m => m.AdministrateurRoutes)
+  },
+
+  { path: 'acceuil', component: Acceuil },
+
+  { path: 'publiclayout', component: Publiclayout },
+
+  { path: 'auth', component: Auth },
+
+  { path: 'login', component: Auth }
 
 ];

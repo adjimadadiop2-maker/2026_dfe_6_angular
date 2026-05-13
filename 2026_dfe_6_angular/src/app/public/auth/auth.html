@@ -1,0 +1,31 @@
+<div class="auth-container">
+
+  <div class="auth-card">
+
+    <h1>
+      {{ isLogin ? '🔐 Login' : '📝 Register' }}
+    </h1>
+
+    <p>
+      {{ isLogin ? 'Connectez-vous à votre compte' : 'Créer un nouveau compte' }}
+    </p>
+
+    <input type="email"
+           placeholder="Email"
+           [(ngModel)]="email">
+
+    <input type="password"
+           placeholder="Mot de passe"
+           [(ngModel)]="password">
+
+    <button (click)="submit()">
+      {{ isLogin ? 'Se connecter' : 'S’inscrire' }}
+    </button>
+
+    <a (click)="toggle()">
+      {{ isLogin ? 'Créer un compte' : 'J’ai déjà un compte' }}
+    </a>
+
+  </div>
+
+</div>
