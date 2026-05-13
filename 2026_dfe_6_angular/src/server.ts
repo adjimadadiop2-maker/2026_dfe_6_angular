@@ -29,13 +29,20 @@ const angularApp = new AngularNodeAppEngine();
  */
 
 
-// ✅ API AVANT TOUT
 app.get('/patients', (req, res) => {
   res.json([
     { id: 1, nom: 'Ali' },
-    { id: 2, nom: 'Fatou' },
+    { id: 2, nom: 'Fatou' }
   ]);
 });
+
+app.get('/medecins', (req, res) => {
+  res.json([
+    { id: 1, nom: 'Dr Fall', fonction: 'Cardiologie' },
+    { id: 2, nom: 'Dr Ba', fonction: 'Pédiatrie' }
+  ]);
+});
+
 
 // ✅ fichiers statiques
 app.use(

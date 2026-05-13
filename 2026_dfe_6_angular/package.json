@@ -2,13 +2,9 @@
   "name": "my-app",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:my-app": "node dist/my-app/server/server.mjs",
-    "server": "json-server --watch back-end/db.json --port 3000"
+    "patients": "json-server --watch back-end/db.json --port 3001",
+    "medecins": "json-server --watch back-end/db.json --port 3002",
+    "dev": "concurrently \"npm run patients\" \"npm run medecins\""
   },
   "prettier": {
     "printWidth": 100,
@@ -44,6 +40,7 @@
     "@angular/compiler-cli": "^21.1.0",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
+    "concurrently": "^9.2.1",
     "jsdom": "^27.1.0",
     "json-server": "^1.0.0-beta.15",
     "typescript": "~5.9.2",
