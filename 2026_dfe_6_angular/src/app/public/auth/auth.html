@@ -1,31 +1,140 @@
-<div class="auth-container">
+<div class="login-page">
 
-  <div class="auth-card">
+    <!-- BACKGROUND SHAPES -->
 
-    <h1>
-      {{ isLogin ? '🔐 Login' : '📝 Register' }}
-    </h1>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
 
-    <p>
-      {{ isLogin ? 'Connectez-vous à votre compte' : 'Créer un nouveau compte' }}
-    </p>
+    <!-- LOGIN CARD -->
 
-    <input type="email"
-           placeholder="Email"
-           [(ngModel)]="email">
+    <div class="login-container">
 
-    <input type="password"
-           placeholder="Mot de passe"
-           [(ngModel)]="password">
+        <!-- LEFT SIDE -->
 
-    <button (click)="submit()">
-      {{ isLogin ? 'Se connecter' : 'S’inscrire' }}
-    </button>
+        <div class="left-side">
 
-    <a (click)="toggle()">
-      {{ isLogin ? 'Créer un compte' : 'J’ai déjà un compte' }}
-    </a>
+            <div class="brand">
 
-  </div>
+                <h1>AngularApp</h1>
+
+                <p>
+                    Une plateforme moderne,
+                    rapide et sécurisée.
+                </p>
+
+            </div>
+
+            <img
+                src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png"
+                alt="login image"
+            >
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="right-side">
+
+            <!-- BACK BUTTON -->
+
+            <a href="./acceuil" class="back-home">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Retour à l'accueil
+
+            </a>
+
+            <h2 class="title">
+                Connexion
+            </h2>
+
+            <p class="subtitle">
+                Connectez-vous à votre compte
+            </p>
+
+            <!-- FORM -->
+
+            <form>
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label>Adresse email</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            placeholder="Entrez votre email"
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label>Mot de passe</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            placeholder="Entrez votre mot de passe"
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- OPTIONS -->
+
+                <div class="options">
+
+                    <div class="remember">
+
+                        <input type="checkbox">
+
+                        <span>Se souvenir de moi</span>
+
+                    </div>
+
+                    <a href="#" class="forgot-password">
+                        Mot de passe oublié ?
+                    </a>
+
+                </div>
+
+                <!-- BUTTON -->
+
+                <button class="login-btn">
+                    Se connecter
+                </button>
+
+            </form>
+
+            <!-- REGISTER -->
+
+            <div class="bottom-text">
+
+                Vous n'avez pas de compte ?
+
+                <a href="./register">
+                    S'inscrire
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>

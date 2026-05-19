@@ -1,277 +1,53 @@
-<style>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Angular</title>
 
-    *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-    }
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    body{
-    background:#f1f5f9;
-    }
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
 
-    /* MAIN */
+    <!-- HEADER -->
 
-    .main-container{
-    display:flex;
-    min-height:100vh;
-    }
+    <header>
 
-    /* SIDEBAR */
-
-    .sidebar{
-    width:250px;
-    background:#0f172a;
-    color:white;
-    padding:30px 20px;
-    }
-
-    .logo{
-    font-size:28px;
-    font-weight:bold;
-    margin-bottom:50px;
-    color:#38bdf8;
-    }
-
-    .menu{
-    list-style:none;
-    }
-
-    .menu li{
-    padding:15px;
-    margin-bottom:15px;
-    border-radius:10px;
-    cursor:pointer;
-    transition:0.3s;
-    }
-
-    .menu li:hover{
-    background:#1e293b;
-    }
-
-    /* CONTENT */
-
-    .content{
-    flex:1;
-    }
-
-    /* NAVBAR */
-
-    .navbar{
-    height:80px;
-    background:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 40px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .buttons{
-    display:flex;
-    gap:15px;
-    }
-
-    button{
-    border:none;
-    padding:12px 20px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:0.3s;
-    }
-
-    .login-btn{
-    background:#3b82f6;
-    color:white;
-    }
-
-    .login-btn:hover{
-    background:#2563eb;
-    }
-
-    .register-btn{
-    background:#22c55e;
-    color:white;
-    }
-
-    .register-btn:hover{
-    background:#16a34a;
-    }
-
-    /* HERO */
-
-    .hero{
-    padding:50px;
-    }
-
-    .hero-text h1{
-    font-size:50px;
-    color:#0f172a;
-    margin-bottom:20px;
-    }
-
-    .hero-text p{
-    font-size:20px;
-    color:#475569;
-    }
-
-    /* CARDS */
-
-    .cards{
-    margin-top:50px;
-    display:flex;
-    gap:30px;
-    flex-wrap:wrap;
-    ;
-    }
-
-    .card{
-    width:250px;
-    padding:30px;
-    border-radius:20px;
-    color:white;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .card h2{
-    font-size:40px;
-    margin-bottom:10px;
-    }
-
-    .blue{
-    background:#3b82f6;
-    }
-
-    .green{
-    background:#22c55e;
-    }
-
-    .orange{
-    background:#f97316;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:900px){
-
-    .main-container{
-        flex-direction:column;
-    }
-
-    .sidebar{
-        width:100%;
-    }
-
-    .cards{
-        justify-content:center;
-    }
-
-    .hero-text h1{
-        font-size:35px;
-    }
-
-    }
-
-</style>
-
-<div class="main-container">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <div class="logo">
-      🅰 AngularMed
-    </div>
-
-    <ul class="menu">
-
-      <li>🏠 Dashboard</li>
-      <li>👨‍⚕️ Médecins</li>
-      <li>🧑 Patients</li>
-      <li>📅 Rendez-vous</li>
-      <li>⚙ Paramètres</li>
-
-    </ul>
-
-  </aside>
-
-  <!-- CONTENT -->
-  <div class="content">
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-
-      <h2>Bienvenue Admin</h2>
-
-      <div class="buttons">
-
-        <button class="login-btn" (click)="login()">
-            Login
-        </button>
-
-        <button class="register-btn" (click)="register()">
-            Register
-        </button>
-
-        <button *ngIf="isLoggedIn"
-                class="logout-btn"
-                (click)="logout()">
-            Logout
-        </button>
-
+        <div class="logo">
+            AngularApp
         </div>
 
-        <!-- TEST VISUEL -->
-        <p *ngIf="isLoggedIn" style="color:green;font-weight:bold;">
-       
-        </p>
+        <nav>
+            <a routerLink="/">Accueil</a>
+            <a routerLink="/features">Fonctionnalités</a>
+            <a routerLink="/services">Services</a>
+            <a routerLink="/contact">Contact</a>
+        </nav>
 
-        <p *ngIf="!isLoggedIn" style="color:red;font-weight:bold;">
-        
-        </p>
-    </nav>
+        <div class="auth-buttons">
+            <a routerLink="/public/auth" class="login-btn">
+                Se connecter
+            </a>
 
-    <!-- HERO -->
-    <div class="hero">
-
-      <div class="hero-text">
-
-        <h1>
-          Système de Gestion Médicale Angular
-        </h1>
-
-        <p>
-          Gérez les patients, médecins et rendez-vous
-          avec une interface moderne et rapide.
-        </p>
-
-      </div>
-
-      <!-- CARDS -->
-      <div class="cards">
-
-        <div class="card blue">
-          <h2>150+</h2>
-          <p>Patients</p>
+            <a routerLink="/register" class="signup-btn">
+                S'inscrire
+            </a>
         </div>
 
-        <div class="card green">
-          <h2>45</h2>
-          <p>Médecins</p>
-        </div>
+    </header>
 
-        <div class="card orange">
-          <h2>320</h2>
-          <p>Consultations</p>
-        </div>
+    <router-outlet></router-outlet>
 
-      </div>
+    <!-- FOOTER -->
 
-    </div>
+    <footer>
+        © 2026 AngularApp - Tous droits réservés
+    </footer>
 
-  </div>
-  <router-outlet></router-outlet>
-
-</div>
+</body>
+</html>
