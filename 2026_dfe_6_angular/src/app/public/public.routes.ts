@@ -1,31 +1,17 @@
 import { Routes } from '@angular/router';
 import { Acceuil } from '../acceuil/acceuil';
-import { Publiclayout } from '../layouts/publiclayout/publiclayout';
-impo
+import { PublicLayout } from '../layouts/public-layout/public-layout';
+import { Auth } from './auth/auth';
+import { Register } from './register/register';
 
-export const PublicRoutes: Routes = [
-  {
-    path: '',
-    component: Publiclayout,
-    children: [
-      {
-        path: '',
-        component: Acceuil
-      },
-      {
-        path: 'acceuil',
-        component: Acceuil
-      },
-      {
-        path: 'auth',
-        loadComponent: () =>
-          import('../auth/auth').then(m => m.Auth)
-      },
-      {
-        path: 'register',
-        loadComponent: () =>
-          import('../auth/register').then(m => m.Register)
-      }
-    ]
-  }
+export const publicRoutes: Routes = [
+    {path: '', component: PublicLayout, 
+        children: [
+            {path: '', redirectTo: 'acceuil', pathMatch: 'full'}, // C'est la route par defaut, elle redirige vers la route 'acceuil' lorsque l'utilisateur accède à la racine de l'application.
+            {path: 'acceuil', component: Acceuil},           
+            {path: 'auth', component: Auth},
+            {path: 'register', component: Register}
+        ]
+    }, 
+
 ];

@@ -1,81 +1,49 @@
+import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { MedecinService } from '../../medecin-service';
-import { CommonModule } from '@angular/common';
-  
 
 @Component({
   selector: 'app-medecin',
-  standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AsyncPipe],
   templateUrl: './medecin.html',
-  styleUrls: ['./medecin.css'],
+  styleUrl: './medecin.css',
 })
-export class MedecinComponent implements OnInit {
+export class Medecin implements OnInit {
+  title = 'Médecins';
+  Medecins2!: Observable<any[]>;
 
-  title = 'Medecins';
+  constructor(private router: Router, private service: MedecinService) {}
 
-  tableauMedecins: any[] = [];
-
-  constructor(
-    private router: Router,
-    private medecinService: MedecinService
-  ) {}
-
-  ngOnInit(): void {
-    this.loadMedecins();
-  }
-
-  loadMedecins(): void {
-    console.log("tester la methode");
-
-    this.medecinService.getMedecins().subscribe({
-      next: (res: any[]) => {
-        this.tableauMedecins = res;
-      },
-
-      error: (err) => {
-        console.error('Erreur lors de la récupération des médecins:', err);
-      }
-    });
-  }
-
-  getSomme(a: number, b: number): number {
-    return a + b;
+  ngOnInit() {
+    this.Medecins2 = this.service.getMedecins();
   }
 
   getEmail(): string {
-    return "seck@mail.com";
+    return 'contact@cabinet.com';
   }
 
   getInfoMedecin() {
-    this.router.navigate(['formmedecin']);
+    this.router.navigate(['ajouter-medecin']);
   }
 
-  editMedecin(data: any) {
-    console.log("MÉDECIN =", data);
-
-    this.router.navigate(['edit-medecin', data.id]);
+  editMedecin(item: any) {
+    this.router.navigate(['edit-medecin', item.id]);
   }
 
   deleteMedecin(id: any) {
-
-    console.log(id);
-
-    this.medecinService.deleteMedecin(id).subscribe({
-
-      next: () => {
-
-        console.log("Médecin supprimé");
-
-        this.loadMedecins();
-      },
-
-      error: (err) => {
-        console.error("Erreur suppression", err);
-      }
-
-    });
+    if (confirm('Êtes-vous sûr de vouloir supprimer ce médecin ?')) {
+      this.service.deleteMedecin(id).subscribe(
+        () => {
+          this.router.navigate(['medecin']);
+        },
+        (error) => {
+          console.log('Erreur lors de la suppression du médecin');
+          console.log(error);
+        }
+      );
+    }
   }
-
 }

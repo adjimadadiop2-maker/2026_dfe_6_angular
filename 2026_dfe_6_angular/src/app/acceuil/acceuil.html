@@ -1,153 +1,114 @@
-<!-- HEADER / NAVBAR -->
-
-<header class="navbar">
-
-    <div class="logo">
-
-        <i class="fa-brands fa-angular"></i>
-        <span>AngularApp</span>
-
-    </div>
-
-    <nav class="nav-menu">
-
-        <a href="#">Accueil</a>
-        <a href="#">Fonctionnalités</a>
-        <a href="#">Tarifs</a>
-        <a href="#">Contact</a>
-
-    </nav>
-<div class="nav-buttons">
-
-   <button type="button" routerLink="/public/auth">
-  Connexion
-</button>
-
-    <a routerLink="/public/register" class="register-btn">
-        Inscription
-    </a>
-
-</div>
-
-</header>
-
-
 <!-- HERO SECTION -->
 
-<section class="hero">
+    <section class="hero">
 
-    <div class="hero-text">
+        <div class="hero-text">
 
-        <h1>
-            Créez votre application
-            <span>Angular</span>
-            moderne
-        </h1>
+            <h1>
+                Créez votre application
+                <span>Angular</span>
+                moderne
+            </h1>
+
+            <p>
+                Une landing page élégante, rapide et professionnelle
+                pour présenter votre application avec un design
+                moderne et responsive.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="primary-btn">
+                    Commencer
+                </a>
+
+                <a href="#" class="secondary-btn">
+                    Découvrir
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <div class="dashboard">
+
+                <h2>Dashboard Moderne</h2>
+
+                <div class="box">
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <div>
+                        <h4>Statistiques</h4>
+                        <p>Analyse en temps réel</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <i class="fa-solid fa-users"></i>
+
+                    <div>
+                        <h4>Utilisateurs</h4>
+                        <p>Gestion simplifiée</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <div>
+                        <h4>Sécurité</h4>
+                        <p>Protection avancée</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <h2>Pourquoi choisir notre app ?</h2>
 
         <p>
-            Une landing page élégante, rapide et professionnelle
-            pour présenter votre application avec un design
-            moderne et responsive.
+            Une interface moderne pensée pour la performance
+            et l’expérience utilisateur.
         </p>
 
-        <div class="hero-buttons">
+        <div class="feature-grid">
 
-            <a href="#" class="primary-btn">
-                Commencer
-            </a>
+            <div class="feature-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Rapide</h3>
 
-            <a href="#" class="secondary-btn">
-                Découvrir
-            </a>
-
-        </div>
-
-    </div>
-
-    <div class="hero-image">
-
-        <div class="dashboard">
-
-            <h2>Dashboard Moderne</h2>
-
-            <div class="box">
-                <i class="fa-solid fa-chart-line"></i>
-
-                <div>
-                    <h4>Statistiques</h4>
-                    <p>Analyse en temps réel</p>
-                </div>
+                <p>
+                    Performance optimisée pour une navigation fluide.
+                </p>
             </div>
 
-            <div class="box">
-                <i class="fa-solid fa-users"></i>
+            <div class="feature-card">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <h3>Responsive</h3>
 
-                <div>
-                    <h4>Utilisateurs</h4>
-                    <p>Gestion simplifiée</p>
-                </div>
+                <p>
+                    Compatible mobile, tablette et ordinateur.
+                </p>
             </div>
 
-            <div class="box">
-                <i class="fa-solid fa-shield-halved"></i>
+            <div class="feature-card">
+                <i class="fa-solid fa-palette"></i>
+                <h3>Design Moderne</h3>
 
-                <div>
-                    <h4>Sécurité</h4>
-                    <p>Protection avancée</p>
-                </div>
+                <p>
+                    Un design élégant avec animations et effets modernes.
+                </p>
             </div>
 
         </div>
 
-    </div>
-
-</section>
-
-
-<!-- FEATURES -->
-
-<section class="features">
-
-    <h2>Pourquoi choisir notre app ?</h2>
-
-    <p>
-        Une interface moderne pensée pour la performance
-        et l’expérience utilisateur.
-    </p>
-
-    <div class="feature-grid">
-
-        <div class="feature-card">
-            <i class="fa-solid fa-bolt"></i>
-
-            <h3>Rapide</h3>
-
-            <p>
-                Performance optimisée pour une navigation fluide.
-            </p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fa-solid fa-mobile-screen"></i>
-
-            <h3>Responsive</h3>
-
-            <p>
-                Compatible mobile, tablette et ordinateur.
-            </p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fa-solid fa-palette"></i>
-
-            <h3>Design Moderne</h3>
-
-            <p>
-                Un design élégant avec animations et effets modernes.
-            </p>
-        </div>
-        <router-outlet></router-outlet>
-
-    </div>
-
-</section>
+    </section>

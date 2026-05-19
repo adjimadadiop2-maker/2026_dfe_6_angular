@@ -1,60 +1,47 @@
 <div class="card">
   <div class="card-header">
     <div class="row">
-      <div class="col-5"></div>
-      @if(title == 'Medecins'){
-        <h5>{{title}}</h5>
-      }
-     
-      <div class="col-7">
-        <input class="form-control me-2" type="search" placeholder= "title" aria-label="Search"/>
+      <div class="col-5">
+        <div If="title == 'Médecins'; else notFound">
+          <h5>{{ title }}</h5>
+        </div>
+        <ng-template #notFound>
+          <h3>Titre introuvable</h3>
+        </ng-template>
+      </div>
+      <div class="col-3">
+        <input class="form-control me-2" type="search" [placeholder]="getEmail()" aria-label="Search" />
       </div>
       <div class="col-4">
-        
-        <button class="btn btn-primary" (click)="getInfoMedecin()">Ajouter un médecin</button>   
+        <button class="btn btn-outline-success" (click)="getInfoMedecin()">Ajouter un médecin</button>
       </div>
-      
     </div>
   </div>
-  <div class="card-body"></div>
-    <table class="table">
-        <thead>
-           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nom</th>
-             <th scope="col">Prenom</th>
-            <th scope="col">Email</th>
-            <th scope="col">Téléphone</th>
-            <th scope="col">Fonction</th>
-            <th scope="col">Actions</th>
-            
-            
-          </tr>
-        </thead>
-        <tbody>
-          @for(item of tableauMedecins ; track $index){
-            <tr>
-              <th scope="col">{{$index+1}}</th>
-              <td>{{item.prenom}}</td>
-              <td>{{item.nom}}</td>
-              <td>{{item.mail}}</td>
-              <td>{{item.telephone}}</td>
-              <td>{{item.fonction}}</td>
-              <td>
-                <button type="button"
-                      class="btn btn-primary"
-                      (click)="editMedecin(item)">
-                Editer
-              </button>
-              <button type="button"
-                    class="btn btn-danger"
-                    (click)="deleteMedecin(item.id)">
-                 Supprimer
-              </button>
-                
-              </td>
-            </tr>
-          }
-        </tbody>
-</table>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Prénom</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Email</th>
+          <th scope="col">Spécialité</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of Medecins2 | async; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.prenom }}</td>
+          <td>{{ item.nom }}</td>
+          <td>{{ item.mail }}</td>
+          <td>{{ item.specialite }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="editMedecin(item)">Modifier</button> |
+            <button class="btn btn-danger" (click)="deleteMedecin(item.id)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
