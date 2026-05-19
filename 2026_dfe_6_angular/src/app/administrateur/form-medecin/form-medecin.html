@@ -1,0 +1,29 @@
+<form [formGroup]="formMedecin" (ngSubmit)="inputForm()">
+  <div class="form-container">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="prenom" class="form-label">Prénom</label>
+        <input type="text" class="form-control" id="prenom" placeholder="Souleymane" formControlName="prenom" required />
+      </div>
+      <div class="form-group">
+        <label for="nom" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="nom" placeholder="Diop" formControlName="nom" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-label">Adresse Email</label>
+      <input type="email" class="form-control" id="email" placeholder="medecin@example.com" formControlName="mail" />
+    </div>
+
+    <div class="form-group">
+      <label for="specialite" class="form-label">Spécialité</label>
+      <input type="text" class="form-control" id="specialite" placeholder="Cardiologie" formControlName="specialite" />
+    </div>
+
+    <div class="form-actions">
+      <button class="btn btn-primary">Enregistrer</button>
+      <a href="administration/medecin" class="btn-link">Retour à la liste des médecins</a>
+    </div>
+  </div>
+</form>

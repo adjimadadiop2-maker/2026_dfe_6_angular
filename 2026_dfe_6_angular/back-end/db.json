@@ -1,46 +1,69 @@
 {
   "patients": [
     {
-      "id": "2",
-      "nom": "DIOP",
-      "prenom": "YORO",
-      "mail": "yoro.diop@example.com",
-      "age": 34
-    },
-    {
       "id": "3",
-      "nom": "DIB",
-      "prenom": "DANG",
-      "mail": "dang.dib@example.com",
-      "age": 4
+      "nom": "Niang",
+      "prenom": "Omar",
+      "mail": "bob.johnson@example.com",
+      "age": 45
     },
     {
-      "prenom": "Bitty",
-      "nom": "sow",
-      "mail": "bittysow@example.com",
-      "age": 24,
-      "id": "Y_7T8A1YsPg"
+      "id": "f3a4",
+      "prenom": "Awa",
+      "nom": "Ndiaye",
+      "mail": "ndiaye@mail.com",
+      "age": 20
     },
     {
-      "prenom": "fatou",
-      "nom": "ndiaye",
-      "mail": "fatou@gmail.com",
-      "age": 24,
-      "id": "hjH4nG_nX3I"
+      "id": "85a6",
+      "prenom": "Coumba",
+      "nom": "Camara",
+      "mail": "camara@gmail.com",
+      "age": 50
     },
     {
-      "prenom": "ndao",
-      "nom": "mamour",
-      "mail": "mamoundao@gmail.com",
-      "age": 55,
-      "id": "yE6K9QBOG5c"
+      "id": "be63",
+      "prenom": "Baye Marame",
+      "nom": "Thiombane",
+      "mail": "thiombane@gmail.com",
+      "age": 19
     },
     {
-      "prenom": "martyar",
-      "nom": "matar",
-      "mail": "matar@gmail.com",
-      "age": 77,
-      "id": "NrDfa986cs0"
+      "id": "bed5",
+      "prenom": "Bamba",
+      "nom": "Ndiaye",
+      "mail": "Ndiaye@gmail.com",
+      "age": 30
+    },
+    {
+      "id": "dac5",
+      "prenom": "Mansour ",
+      "nom": "Samb",
+      "mail": "Mansour_samb@gmail.com",
+      "age": 21
+    },
+    {
+      "id": "184a",
+      "prenom": "Ndeye Binta",
+      "nom": "Dieye",
+      "mail": "Dieye@gmail.com",
+      "age": 23
+    }
+  ],
+  "medecins": [
+    {
+      "id": "m2",
+      "prenom": "Fatou",
+      "nom": "Sow",
+      "mail": "fatou.sow@example.com",
+      "specialite": "Pédiatrie"
+    },
+    {
+      "id": "5d92",
+      "prenom": "Abdoulaye ",
+      "nom": "Samba",
+      "mail": "samba@gmail.com",
+      "specialite": "Cardiologie"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

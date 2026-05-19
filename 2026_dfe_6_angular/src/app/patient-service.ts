@@ -1,39 +1,36 @@
-import { Injectable } from '@angular/core';
-import { Router } from 'express';
 import { HttpClient } from '@angular/common/http';
-import { inject } from '@angular/core';
-import { Observable } from 'rxjs';
-@Injectable({
+import { Injectable, inject } from '@angular/core';
+
+@Injectable({ // @ s'appele une annotation
   providedIn: 'root',
 })
 export class PatientService {
-   private http = inject(HttpClient);
-  host = "http://localhost:3001";
+  private http = inject(HttpClient)
 
-   
- getPatients(){
-   return this.http.get<any[]>(this.host+"/patients");
-   
- }
- storePatient(data:any){
-   this.http.post(this.host+"/patients",data);
-   return this.http.post(this.host+"/patients",data);
-   
- 
- }
- findpatient(id:any){
-  return this.http.get(this.host+"/patients/"+id);  
- }
- updatePatient(id:any,data:any){
-  console.log("test la methode edit",data);  
-  return this.http.put(this.host+"/patients/"+id,data);
- }
- deletePatient(id: number) {
-  return this.http.delete(`http://localhost:3001/patients/${id}`);
- }
+  host = 'http://127.0.0.1:8000/api'; // C'est le lien qui pointe vers le backend de l'application depuis notre base de donnée
 
+  getPatients(){ // Cette methode utilise le service HttpClient pour effectuer une requete GET vers l'URL 'http://localhost:8000/api/patients' et retourne un Observable qui contient la réponse de la requete. L'observable est ensuite utilisé dans la methode ngOnInit pour récupérer les données des patients et les stocker dans l'attribut Patients2.
+    return this.http.get(this.host + '/patients');
+  }
 
-   
+  storePatient(data:any){
+    return this.http.post(this.host + '/patients', data);
 
-  
+  }
+
+  findPatient(id:any){
+    return this.http.get(this.host + '/patients/' + id);
+
+  }
+
+  updatePatient(id:any,data:any){
+    console.log("Test update Patient", id);
+    console.log("Test update Patient", data);
+    return this.http.put(this.host + '/patients/' + id, data);
+  }
+
+  deletePatient(id:any){
+    console.log("Test delete Patient", id);
+    return this.http.delete(this.host + '/patients/' + id);
+  }
 }

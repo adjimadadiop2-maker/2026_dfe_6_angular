@@ -1,37 +1,29 @@
-<div class="container mt-4">
-  <h3 class="mb-4">Formulaire Patient</h3>
-
-  <form [formGroup]="formPatient" (ngSubmit)="inputFormPatient()">
-    <div class="mb-3">
-      <label class="form-label">Nom</label>
-      <input type="text" class="form-control" id="inputNom" formControlName="nom" placeholder="Entrer le nom">
+<form [formGroup] = "formPatient" (ngSubmit)="inputForm()"> 
+  <div class="form-container">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="prenom" class="form-label">Prénom</label>
+        <input type="text" class="form-control" id="prenom" placeholder="Abdoulaye" formControlName="prenom" require>
+      </div>
+      <div class="form-group">
+        <label for="nom" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="nom" placeholder="SAMBA" formControlName="nom">
+      </div>
     </div>
-
-    <div class="mb-3">
-      <label class="form-label">Prénom</label>
-      <input type="text" class="form-control" id="inputPrenom" formControlName="prenom" placeholder="Entrer le prénom">
+    
+    <div class="form-group">
+      <label for="email" class="form-label">Adresse Email</label>
+      <input type="email" class="form-control" id="email" placeholder="exemple@gmail.com" formControlName="mail">
     </div>
-
-    <div class="mb-3">
-      <label class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputEmail" formControlName="mail" placeholder="Entrer l'email">
+    
+    <div class="form-group">
+      <label for="age" class="form-label">Âge</label>
+      <input type="number" class="form-control" id="age" placeholder="Age du patient" formControlName="age">
     </div>
-
-    <div class="mb-3">
-      <label class="form-label">Âge</label>
-      <input type="number" class="form-control" id="inputAge" formControlName="age" placeholder="Entrer l'âge">
+    
+    <div class="form-actions">
+      <button class="btn btn-primary">Enregistrer</button>
+      <a href="administration/patient" class="btn-link">Retour sur la liste des patients</a>
     </div>
-
-    <div class="form-check mb-3">
-      <input class="form-check-input" type="checkbox" id="check1">
-      <label class="form-check-label" for="check1">
-        Accepter les conditions
-      </label>
-    </div>
-
-
-    <button type="submit" class="btn btn-primary">
-      Enregistrer
-    </button>
-  </form>
-</div>
+  </div>
+</form>

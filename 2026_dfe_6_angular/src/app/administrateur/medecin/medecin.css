@@ -1,0 +1,8 @@
+/* Styles pour la liste des médecins */
+.card {
+  margin: 1rem;
+}
+.table td,
+.table th {
+  vertical-align: middle;
+}

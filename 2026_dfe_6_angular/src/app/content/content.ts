@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Patient } from '../administrateur/patient/patient';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -11,4 +10,3 @@ import { RouterOutlet } from '@angular/router';
 export class Content {
 
 }
-

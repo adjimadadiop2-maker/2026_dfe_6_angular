@@ -1,0 +1,14 @@
+/* Styles pour le formulaire des médecins */
+.form-container {
+  margin: 1rem;
+}
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+.form-group {
+  flex: 1;
+}
+.form-actions {
+  margin-top: 1rem;
+}
