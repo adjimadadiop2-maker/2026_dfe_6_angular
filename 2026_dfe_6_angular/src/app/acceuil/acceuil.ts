@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet, Router } from '@angular/router';
+import { RouterOutlet, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-acceuil',
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     RouterOutlet
   ],
   templateUrl: './acceuil.html',
@@ -18,18 +19,12 @@ export class Acceuil {
 
   constructor(private router: Router) {}
 
-  login() {
-    this.router.navigate(['/auth']);
+ goLogin() {
+  this.router.navigateByUrl('/public/auth');
+}
+
+  register() {
+    localStorage.removeItem('token');
+    this.isLoggedIn = false;
   }
-  logout() {
-  localStorage.removeItem('token');
-  this.isLoggedIn = false;
-  
-  }
-  
-
-
-
-
- 
 }

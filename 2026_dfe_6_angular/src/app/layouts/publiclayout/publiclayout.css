@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(135deg,#dbeafe,#eff6ff,#ffffff);
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#0f172a;
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#334155;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#2563eb;
+}
+
+.auth-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.login-btn,
+.signup-btn{
+    padding:12px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.login-btn{
+    border:2px solid #2563eb;
+    color:#2563eb;
+}
+
+.login-btn:hover{
+    background:#2563eb;
+    color:white;
+}
+
+.signup-btn{
+    background:#2563eb;
+    color:white;
+    box-shadow:0 10px 25px rgba(37,99,235,0.25);
+}
+
+.signup-btn:hover{
+    transform:translateY(-3px);
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#64748b;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-text h1{
+        font-size:45px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .dashboard{
+        width:100%;
+    }
+}

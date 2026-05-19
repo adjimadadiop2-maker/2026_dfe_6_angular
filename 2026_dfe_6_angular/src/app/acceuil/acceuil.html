@@ -1,267 +1,153 @@
-<style>
+<!-- HEADER / NAVBAR -->
 
-    *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-    }
-
-    body{
-    background:#f1f5f9;
-    }
-
-    /* MAIN */
-
-    .main-container{
-    display:flex;
-    min-height:100vh;
-    }
-
-    /* SIDEBAR */
-
-    .sidebar{
-    width:250px;
-    background:#0f172a;
-    color:white;
-    padding:30px 20px;
-    }
-
-    .logo{
-    font-size:28px;
-    font-weight:bold;
-    margin-bottom:50px;
-    color:#38bdf8;
-    }
-
-    .menu{
-    list-style:none;
-    }
-
-    .menu li{
-    padding:15px;
-    margin-bottom:15px;
-    border-radius:10px;
-    cursor:pointer;
-    transition:0.3s;
-    }
-
-    .menu li:hover{
-    background:#1e293b;
-    }
-
-    /* CONTENT */
-
-    .content{
-    flex:1;
-    }
-
-    /* NAVBAR */
-
-    .navbar{
-    height:80px;
-    background:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 40px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .buttons{
-    display:flex;
-    gap:15px;
-    }
-
-    button{
-    border:none;
-    padding:12px 20px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:0.3s;
-    }
-
-    .login-btn{
-    background:#3b82f6;
-    color:white;
-    }
-
-    .login-btn:hover{
-    background:#2563eb;
-    }
-
-    .register-btn{
-    background:#22c55e;
-    color:white;
-    }
-
-    .register-btn:hover{
-    background:#16a34a;
-    }
-
-    /* HERO */
-
-    .hero{
-    padding:50px;
-    }
-
-    .hero-text h1{
-    font-size:50px;
-    color:#0f172a;
-    margin-bottom:20px;
-    }
-
-    .hero-text p{
-    font-size:20px;
-    color:#475569;
-    }
-
-    /* CARDS */
-
-    .cards{
-    margin-top:50px;
-    display:flex;
-    gap:30px;
-    flex-wrap:wrap;
-    ;
-    }
-
-    .card{
-    width:250px;
-    padding:30px;
-    border-radius:20px;
-    color:white;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .card h2{
-    font-size:40px;
-    margin-bottom:10px;
-    }
-
-    .blue{
-    background:#3b82f6;
-    }
-
-    .green{
-    background:#22c55e;
-    }
-
-    .orange{
-    background:#f97316;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:900px){
-
-    .main-container{
-        flex-direction:column;
-    }
-
-    .sidebar{
-        width:100%;
-    }
-
-    .cards{
-        justify-content:center;
-    }
-
-    .hero-text h1{
-        font-size:35px;
-    }
-
-    }
-
-</style>
-
-<div class="main-container">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
+<header class="navbar">
 
     <div class="logo">
-      🅰 AngularMed
+
+        <i class="fa-brands fa-angular"></i>
+        <span>AngularApp</span>
+
     </div>
 
-    <ul class="menu">
+    <nav class="nav-menu">
 
-      <li>🏠 Dashboard</li>
-      <li>👨‍⚕️ Médecins</li>
-      <li>🧑 Patients</li>
-      <li>📅 Rendez-vous</li>
-      <li>⚙ Paramètres</li>
+        <a href="#">Accueil</a>
+        <a href="#">Fonctionnalités</a>
+        <a href="#">Tarifs</a>
+        <a href="#">Contact</a>
 
-    </ul>
-
-  </aside>
-
-  <!-- CONTENT -->
-  <div class="content">
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-
-      <h2>Bienvenue Admin</h2>
-
-      <div class="buttons">
-
-        <button class="login-btn" (click)="login()">
-            Login
-        </button>
-
-                
-          <button *ngIf="isLoggedIn"
-                  class="logout-btn"
-                  (click)="logout()">
-            Logout
-          </button>
-
-        </div>
-
-      
     </nav>
+<div class="nav-buttons">
 
-    <!-- HERO -->
-    <div class="hero">
+   <button type="button" routerLink="/public/auth">
+  Connexion
+</button>
 
-      <div class="hero-text">
+    <a routerLink="/public/register" class="register-btn">
+        Inscription
+    </a>
+
+</div>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-text">
 
         <h1>
-          Système de Gestion Médicale Angular
+            Créez votre application
+            <span>Angular</span>
+            moderne
         </h1>
 
         <p>
-          Gérez les patients, médecins et rendez-vous
-          avec une interface moderne et rapide.
+            Une landing page élégante, rapide et professionnelle
+            pour présenter votre application avec un design
+            moderne et responsive.
         </p>
 
-      </div>
+        <div class="hero-buttons">
 
-      <!-- CARDS -->
-      <div class="cards">
+            <a href="#" class="primary-btn">
+                Commencer
+            </a>
 
-        <div class="card blue">
-          <h2>150+</h2>
-          <p>Patients</p>
+            <a href="#" class="secondary-btn">
+                Découvrir
+            </a>
+
         </div>
-
-        <div class="card green">
-          <h2>45</h2>
-          <p>Médecins</p>
-        </div>
-
-        <div class="card orange">
-          <h2>320</h2>
-          <p>Consultations</p>
-        </div>
-
-      </div>
 
     </div>
 
-  </div>
-  <router-outlet></router-outlet>
+    <div class="hero-image">
 
-</div>
+        <div class="dashboard">
+
+            <h2>Dashboard Moderne</h2>
+
+            <div class="box">
+                <i class="fa-solid fa-chart-line"></i>
+
+                <div>
+                    <h4>Statistiques</h4>
+                    <p>Analyse en temps réel</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-users"></i>
+
+                <div>
+                    <h4>Utilisateurs</h4>
+                    <p>Gestion simplifiée</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <h4>Sécurité</h4>
+                    <p>Protection avancée</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <h2>Pourquoi choisir notre app ?</h2>
+
+    <p>
+        Une interface moderne pensée pour la performance
+        et l’expérience utilisateur.
+    </p>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Rapide</h3>
+
+            <p>
+                Performance optimisée pour une navigation fluide.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <h3>Responsive</h3>
+
+            <p>
+                Compatible mobile, tablette et ordinateur.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-palette"></i>
+
+            <h3>Design Moderne</h3>
+
+            <p>
+                Un design élégant avec animations et effets modernes.
+            </p>
+        </div>
+        <router-outlet></router-outlet>
+
+    </div>
+
+</section>
